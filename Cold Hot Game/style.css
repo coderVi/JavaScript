@@ -1,0 +1,15 @@
+.title{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-weight: bold;
+}
+body{
+    background: linear-gradient(to left , rgb(170, 255, 159) , rgb(103, 212, 255));
+}
+.btnBasla{
+    color: red;
+    font-weight: bold;
+}
+.kalin{
+    font-weight: bold;
+}

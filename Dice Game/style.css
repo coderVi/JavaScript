@@ -1,0 +1,8 @@
+.Dice{
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 24pt;
+}
+body{
+    background: linear-gradient(to right, aqua,rgb(149, 255, 149));
+}

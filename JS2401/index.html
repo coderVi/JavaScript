@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 201</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <h1>DOM Manipulation</h1>
+    <p id="demo">HTML etiket içeriği</p>
+    <button type="button" onclick="document.getElementById('demo').innerHTML='<p><b>Hello JS</b></p>'">TIKLA</button>
+    <b><hr></b>
+    <h1> JS 4 İşlem</h1>
+    <form>
+        <label for="">1. sayı</label>
+        <input type="text" name="" id="sayi1"><br><br>
+        <label for="">2. sayı</label>
+        <input type="text" name="" id="sayi2"><br><br>
+
+        <label for="">SONUÇ : </label>
+        <input type="text" id="sonuc"><br><br>
+
+        <input type="button" onclick="topla();" value="TOPLA">
+        <input type="button" onclick="cikar();" value="ÇIKARMA">
+        <input type="button" onclick="carp();" value="ÇARPMA">
+        <input type="button" onclick="bol();" value="BÖLME">
+        
+    </form>
+    <br>
+    <b><hr></b>
+    
+    <h2>İdeal Kilo</h2>
+
+    <form>
+        <table cellpadding="10" cellspacing="10" border="1">
+            <tr>
+                <td>Boy : </td>
+                <td><input type="text" id="Boy"></td>
+            </tr>
+            <tr>
+                <td>Kilo : </td>
+                <td><input type="text" id="Kilo"></td>
+            </tr>
+            <tr>
+                <td>Doğum Yılı : </td>
+                <td><input type="text" id="dYili"></td>
+            </tr>
+            <tr>
+                <td>Cinsiyet : </td>
+                <td><input type="text" id="cinsiyet" placeholder="E/K"></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="button" value="Hesapla" onclick="hesapla()"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="hesap"></td>
+            </tr>
+            
+
+
+
+        </table>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    
+
+    <script>
+        const person = {
+            name : "Coder vi",
+            age : 26,
+            sayHello : function(){
+                console.log("Hello, I am Programmer. Trust Me!");
+            },
+            sayGoodBy(){
+                console.log("Goodbye Everyone")
+            }
+        }
+        person.sayHello();
+        person.sayGoodBy();
+
+        console.log(person);
+
+
+        function add(a,b){
+            console.log(a+b);
+        }
+        add(5,3);
+
+        const Funtions = [
+            function(){
+                console.log("İlk eleman");
+            },
+
+            function(a){
+                console.log("a parametresini kullanabilirim " ,a)
+            },
+
+            person.sayHello(),
+
+            add(9,4)
+        ]
+
+        console.log(Funtions[1](12));
+
+        //strin manuple
+        const str1 = "hello";
+        const str2 = "world";
+        console.warn(str1 + " " + str2);
+
+        const cumle = "I'm a programmer";
+        const firstLetter = cumle[0];
+        console.warn(firstLetter);
+        console.warn(cumle.length);
+        console.warn(cumle[cumle.length-1]);
+
+        //Math example
+        const x=9.6;
+        const ceilx = Math.ceil(x);
+        console.log(ceilx);
+
+        const floorx = Math.floor(x);
+        console.log(floorx);
+
+        const roundedx= Math.round(x);
+        console.log(roundedx);
+
+        const floatNumber = 10/3;
+        console.log(floatNumber.toFixed(2)); //virgül sonrası 2 karakter alır
+
+        const numberSTR="44px";
+        console.log(Number(numberSTR));
+        console.log(parseInt(numberSTR));
+    </script>
+</body>
+</html>
