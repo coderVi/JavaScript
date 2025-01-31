@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background random color</title>
+</head>
+<body>
+    <p style="cursor: pointer;" onclick="renkDegis()">Değiştir</p>
+    <script>
+        function renkDegis(){
+            var dizi = ["red","green","blue","yellow"];
+
+            document.body.style.backgroundColor = dizi[Math.floor(Math.random()*dizi.length)];
+        }
+    </script>
+</body>
+</html>

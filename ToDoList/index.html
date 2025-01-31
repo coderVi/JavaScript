@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+</head>
+<body>
+    <h1>TO DO LIST</h1>
+    <hr>
+
+    <div>
+        <ul id="todolist">
+            <li>veri</li>
+        </ul>
+    </div>
+    <label for="">Yazı : </label><input type="text" id="yazi">
+    <input type="button" value="Listeye Ekle" onclick="VeriEkle()">
+
+    <script>
+        function VeriEkle(){
+            const todoInput = document.getElementById("yazi");
+            const todoText = todoInput.value.trim();
+
+            if (todoText != "") {
+                const todolist = document.getElementById("todolist")
+                const listItem = document.createElement('li');
+
+                listItem.textContent = todoText;
+                todolist.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>

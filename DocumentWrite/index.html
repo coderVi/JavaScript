@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Write</title>
+</head>
+<body>
+    <script>
+        document.write("<table border='2'> <tr>");
+        document.write("<td>5654</td>");
+        document.write("</tr>");
+        document.write("</table>");
+        
+
+        document.write("<table border='2' cellpadding = '10' cellspacing='10'> <tr>");
+        for (let i = 1; i < 11; i++) {
+            document.write("<td>");
+            for (let x = 0; x < 11; x++) {
+                document.write(i + " x " + x + " = " + i*x + "<br>");
+            }
+            if(i === 5){
+                document.write("</tr><tr>");
+            }
+            document.write("</td>");
+            
+        }
+        document.write("</tr></tabel>")
+    </script>
+</body>
+</html>

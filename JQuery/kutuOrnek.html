@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .kutu{
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            float: left;
+            margin: 10px;
+            color: snow;
+            line-height: 200px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="btn">Oluştur</button>
+    <div class="container">
+
+    </div>
+    <script>
+        var sayac = 1;
+        $('.btn').click(function(){
+            var kutu = $('<div>');
+                kutu.addClass('kutu');
+                kutu.html('kutu ' + sayac);
+                sayac++;
+
+                $('.container').append(kutu);
+
+                kutu.on('click',function(){
+                    $(this).remove();
+                    sayac--;
+                });
+        });
+    </script>
+</body>
+</html>

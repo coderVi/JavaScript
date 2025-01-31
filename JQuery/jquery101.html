@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h3 class="title">
+            Title1
+        </h3>
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus itaque maxime recusandae autem aut
+            labore odio consequuntur officia consectetur, similique consequatur vero voluptate. Temporibus et fugit
+            perspiciatis. Ad, voluptatibus culpa?
+        </p>
+        <div class="actions">
+            <button class="btn">Click me!</button>
+        </div>
+
+        <div class="animation">
+            <h2 class="animated">
+                Hello World!
+            </h2>
+            <h3 style="display: none;" class="invisible">Hello my friends</h3>
+            <button class="anime-btn">Click Me!</button>
+        </div>
+    </div>
+
+    <script>
+        //Dom üzeri manipüle
+
+        const title = $('.wrapper > .title');
+        console.log(title);
+        console.log(title.text("Hi!"));
+
+        title.addClass('test'); // yeni class ekler
+
+        title.removeClass("test"); // var olan classı siler
+
+        title.toggleClass("test"); //varsa yo et yoksa etle
+
+        console.log(title.hasClass('test'));
+
+        //Events
+
+        $(".btn").on('click' ,event =>{
+            $(".text").css('background',"orange");
+            $(".text").toggleClass("red");
+
+        });
+        let count = 0
+        $(".btn").click(event=>{
+            count++;
+            $('.title').text('Count : ' + count)
+        });
+
+        //Animations
+
+        const animatedText = $('.animated');
+        const aniBtn = $('.anime-btn');
+        const invisibleText = $('.invisible');
+        aniBtn.on('click',e=>{
+            animatedText.fadeToggle(1000,e=>{
+                invisibleText.fadeToggle(1000,e=>{
+                    animatedText.fadeToggle(1000);
+                });
+            });
+            
+        });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch on JS</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>TCKN</td>
+            <td><input type="text" id="tc"></td>
+            <td><div id="uyari"></div></td>
+        </tr>
+        <tr>
+            <td>Adı</td>
+            <td><input type="text" id="ad"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Soyad</td>
+            <td><input type="text" id="soyad"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        var nesne = document.getElementById("tc");
+        var uyari = document.getElementById("uyari");
+
+        nesne.onkeypress = function(){
+            uyari.textContent ="";
+        }
+        nesne.onblur = function(){
+            try {
+                if(isNaN(nesne.value)) throw "Hatalı karakter girildi";
+                if(nesne.value.length <11) throw "11 karakterden az girildi";
+                if(nesne.value.length > 11) throw "11 karakterden fazla girdiniz";
+
+            } catch (e) {
+                uyari.textContent = e;
+                nesne.focus();
+            }
+        }
+    </script>
+</body>
+</html>
