@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araç Kiralama</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="marka" placeholder="marka"> <br>
+    <input type="text" id="model" placeholder="model"> <br>
+    <input type="text" id="yil" placeholder="yil"> <br>
+    <input type="text" id="renk" placeholder="renk"> <br>
+    <input type="text" id="yakit" placeholder="yakit"> <br>
+    <input type="text" id="saatUcret" placeholder="saatUcret"> <br>
+    <input type="button" onclick="islem()" value="Gönder">
+
+    <script>
+        //Kasko
+        // 1 - 3 yaş arası ise katsayı * 100, 3-6 yaş arası katsayı*100, 6-9 yaş arası katsayı*100,>9 ise kaysayı*100
+        //Yaş
+        //Araç yaşı hesaplanacak
+        //Hesaplama
+        //ücret hesabı yapılacak.
+        function islem()
+        {
+            var arac = {
+                marka : document.getElementById("marka").value,
+                model : document.getElementById("model").value,
+                yil : parseInt(document.getElementById("yil").value),
+                renk : document.getElementById("renk").value,
+                yakit : document.getElementById("yakit").value,
+                saatUcreti : parseInt(document.getElementById("saatUcret").value),
+
+                ucrethesapla : function(saat){
+                    return saat * this.saatUcreti;
+                },
+
+                aracYasi : function(){
+                    const bugun = new Date();
+                    return bugun.getFullYear()-this.yil;
+                },
+
+                kaskohesapa : function(katsayı){
+                    if(this.aracYasi()>-1 && this.aracYasi()<3){
+                        return katsayı*100;
+                    }
+                }
+
+            }
+            console.log(arac.marka);
+            console.log(arac.marka);
+            console.log(arac.marka);
+            console.log(arac.marka);
+
+        }
+    </script>
+</body>
+</html>

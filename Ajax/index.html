@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <ul class="user-list">
+
+    </ul>
+    <div class="form-wrapper">
+        <form id="user-form">
+            <div>
+                <label for="user-input">User Name</label>
+                <input type="text" id="user-input">
+            </div>
+            <button type="submit">Save user</button>
+        </form>
+    </div>
+    <script>
+        //JSON
+        const url = "https://jsonplaceholder.typicode.com/users";
+        const ul = document.querySelector(".user-list");
+        const userList = $(".user-list");
+        //klasik JS
+        // function renderUser(users){
+        //     users.forEach(user => {
+        //         const li = document.createElement("li")
+        //         li.innerText = user.name;
+        //         ul.append(li);
+        //     });
+        // }
+
+        //Jquery
+
+        function renderUser(users){
+            $.each(users,(index,user)=>{
+                $("<li></li>").text(user.name).appendTo(userList);
+            });
+        }
+
+        $.ajax(url).done(users =>{
+            renderUser(users);
+        }).fail(err =>{
+            console.log(err);
+        });
+
+        /*Form submit */
+        $("#user-form").submit(event =>{
+            event.preventDefault();
+            const userName = $("#user-input").val();
+            console.log(userName);
+            const user = {
+                userName : userName
+            }
+            $.post(url,user,response =>{
+                console.log(response);
+            });
+        });    
+
+    </script>
+
+</body>
+</html>

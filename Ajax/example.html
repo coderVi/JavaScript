@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <table id="table-liste">
+        <tr>
+            <th>postId</th>
+            <th>id</th>
+            <th>name</th>
+            <th>e-mail</th>
+            <th>body</th>
+        </tr>
+    </table>
+
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/comments";
+const tableListe = $("#table-liste");
+
+function renderComments(comments) {
+    $.each(comments, (index, comment) => {
+        const row = $("<tr></tr>");
+        row.append($("<td></td>").text(comment.postId));
+        row.append($("<td></td>").text(comment.id));
+        row.append($("<td></td>").text(comment.name));
+        row.append($("<td></td>").text(comment.email));
+        row.append($("<td></td>").text(comment.body));
+        tableListe.append(row);
+    });
+}
+
+$.ajax(url).done(comments => {
+    renderComments(comments);
+}).fail(err => {
+    console.log("Hata:", err);
+});
+
+    </script>
+</body>
+</html>
