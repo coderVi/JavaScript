@@ -9,7 +9,6 @@ for (let index = 0; index < numbers.length; index++) {
     if (numbers[index] % 5 === 1) {
         continue;
     }
-    // Bu sayılar 5 in katlarıdır
     console.log("this is a multiple of 5: " + numbers[index]);
 }
 
@@ -44,3 +43,6 @@ for (let i = 0; i < Students.length; i++) {
   result /= Students[i].notlar.length;
   console.log(Students[i].ad + " " + Students[i].soyad + " - Ortalama: " + Math.floor(result));
 }
+
+
+
